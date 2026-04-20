@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Ferretero - Panel de Control</title>
+    <link rel="stylesheet" href="css/panel_general.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Don Ferretero</div>
+            <div class="user-info">
+                <span>Bienvenido: <strong id="nombre-usuario">Usuario</strong></span>
+                <span>Rol: <strong id="rol-usuario">Administrador</strong></span>
+                <a href="login.html" style="color: white; text-decoration: none;">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#ventas">Ventas y Facturación</a></li>
+            <li><a href="#inventario">Gestión de Stock</a></li>
+            <li><a href="#cajeros">Gestión de Cajeros</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Sales and Billing Section -->
+        <section id="ventas" class="section">
+            <h2 class="section-title">Ventas y Facturación</h2>
+            
+            <div class="sales-controls">
+                <input type="text" class="search-box" id="buscador-producto" name="buscador-producto" placeholder="Buscar producto por código o nombre...">
+                <button type="button" class="btn-primary">Buscar</button>
+            </div>
+
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unit.</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Martillo de Carpintero</td>
+                        <td>2</td>
+                        <td>$15.50</td>
+                        <td>$31.00</td>
+                        <td><button type="button" class="btn-small btn-remove">Quitar</button></td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Juego de Destornilladores</td>
+                        <td>1</td>
+                        <td>$22.75</td>
+                        <td>$22.75</td>
+                        <td><button type="button" class="btn-small btn-remove">Quitar</button></td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Caja de Tornillos (100u)</td>
+                        <td>3</td>
+                        <td>$8.25</td>
+                        <td>$24.75</td>
+                        <td><button type="button" class="btn-small btn-remove">Quitar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="totals">
+                <div class="total-item">
+                    <div class="total-label">Subtotal</div>
+                    <div class="total-value">$78.50</div>
+                </div>
+                <div class="total-item">
+                    <div class="total-label">IVA (16%)</div>
+                    <div class="total-value">$12.56</div>
+                </div>
+                <div class="total-item">
+                    <div class="total-label">Total</div>
+                    <div class="total-value">$91.06</div>
+                </div>
+            </div>
+
+            <form action="#" method="post">
+                <button type="submit" class="btn-generate">Generar Factura</button>
+            </form>
+        </section>
+
+        <!-- Stock Management Section -->
+        <section id="inventario" class="section">
+            <h2 class="section-title">Gestión de Stock (Inventario)</h2>
+            
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Stock Actual</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Martillo de Carpintero</td>
+                        <td>Herramientas</td>
+                        <td>25</td>
+                        <td>$15.50</td>
+                        <td>
+                            <div class="stock-actions">
+                                <button type="button" class="btn-small btn-add">+ Agregar</button>
+                                <button type="button" class="btn-small btn-remove">- Quitar</button>
+                                <button type="button" class="btn-small btn-delete">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Juego de Destornilladores</td>
+                        <td>Herramientas</td>
+                        <td>18</td>
+                        <td>$22.75</td>
+                        <td>
+                            <div class="stock-actions">
+                                <button type="button" class="btn-small btn-add">+ Agregar</button>
+                                <button type="button" class="btn-small btn-remove">- Quitar</button>
+                                <button type="button" class="btn-small btn-delete">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Caja de Tornillos (100u)</td>
+                        <td>Fijaciones</td>
+                        <td>45</td>
+                        <td>$8.25</td>
+                        <td>
+                            <div class="stock-actions">
+                                <button type="button" class="btn-small btn-add">+ Agregar</button>
+                                <button type="button" class="btn-small btn-remove">- Quitar</button>
+                                <button type="button" class="btn-small btn-delete">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>Taladro Eléctrico</td>
+                        <td>Herramientas Eléctricas</td>
+                        <td>8</td>
+                        <td>$89.99</td>
+                        <td>
+                            <div class="stock-actions">
+                                <button type="button" class="btn-small btn-add">+ Agregar</button>
+                                <button type="button" class="btn-small btn-remove">- Quitar</button>
+                                <button type="button" class="btn-small btn-delete">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>Set de Brocas</td>
+                        <td>Accesorios</td>
+                        <td>32</td>
+                        <td>$12.50</td>
+                        <td>
+                            <div class="stock-actions">
+                                <button type="button" class="btn-small btn-add">+ Agregar</button>
+                                <button type="button" class="btn-small btn-remove">- Quitar</button>
+                                <button type="button" class="btn-small btn-delete">Eliminar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="stock-actions">
+                <button type="button" class="btn-small btn-new">+ Añadir Nuevo Artículo</button>
+            </div>
+        </section>
+
+        <!-- Cashier Management Section -->
+        <section id="cajeros" class="section">
+            <h2 class="section-title">Gestión de Cajeros</h2>
+            
+            <table class="cashier-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>jperez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #27ae60;">Activo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María González</td>
+                        <td>mgonzalez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #27ae60;">Activo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Carlos Rodríguez</td>
+                        <td>crodriguez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #e74c3c;">Inactivo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cashier-actions">
+                <button type="button" class="btn-small btn-new">+ Agregar Nuevo Cajero</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

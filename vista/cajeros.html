@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Ferretero - Gestión de Cajeros</title>
+    <link rel="stylesheet" href="css/panel_general.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Don Ferretero</div>
+            <div class="user-info">
+                <span>Bienvenido: <strong id="nombre-usuario">Usuario</strong></span>
+                <span>Rol: <strong id="rol-usuario">Administrador</strong></span>
+                <a href="login.html" style="color: white; text-decoration: none;">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="ventas.html">Ventas y Facturación</a></li>
+            <li><a href="stock.html">Gestión de Stock</a></li>
+            <li><a href="cajeros.html" class="active">Gestión de Cajeros</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Cashier Management Section -->
+        <section class="section">
+            <h2 class="section-title">Gestión de Cajeros</h2>
+            
+            <table class="cashier-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>jperez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #27ae60;">Activo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María González</td>
+                        <td>mgonzalez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #27ae60;">Activo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Carlos Rodríguez</td>
+                        <td>crodriguez</td>
+                        <td>Cajero</td>
+                        <td><span style="color: #e74c3c;">Inactivo</span></td>
+                        <td>
+                            <div class="cashier-actions">
+                                <button type="button" class="btn-small btn-remove">Quitar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cashier-actions">
+                <button type="button" class="btn-small btn-new">+ Agregar Nuevo Cajero</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
